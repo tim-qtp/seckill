@@ -1,4 +1,4 @@
-package com.seckill.order.pojo;
+package com.seckill.page;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

@@ -1,8 +1,8 @@
 package com.seckill.order.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.seckill.order.pojo.Order;
-import com.seckill.order.pojo.OrderVo;
+import com.seckill.page.Order;
+import com.seckill.page.OrderVo;
 import com.seckill.order.service.OrderService;
 import com.seckill.util.IdWorker;
 import com.seckill.util.JwtTokenUtil;
@@ -12,7 +12,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.Map;
 
 /**

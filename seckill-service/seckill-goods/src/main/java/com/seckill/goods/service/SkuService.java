@@ -10,6 +10,10 @@ import java.util.List;
  */
 public interface SkuService {
 
+    /**
+     * 批量插入测试
+     */
+    void batch(List<Sku> list);
 
     /**
      * 分页加载
@@ -40,6 +44,11 @@ public interface SkuService {
      * 删除Sku
      */
     void delete(String id);
+
+    /**
+     * 修改秒杀结束时间
+     */
+    void update2(List<Sku> skus);
 
     /**
      * 修改Sku数据

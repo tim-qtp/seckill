@@ -49,6 +49,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
     /**
      * 秒杀搜索列表
      */
+    //TODO：不懂，后续学完ES需要看
     @Override
     public Page<SkuInfo> search(Map<String, String> searchMap) {
         //时间  starttime
@@ -143,7 +144,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             } else {
                 //删除
                 DeleteRequest deleteRequest = new DeleteRequest(index_name, skuInfo.getId());
-                restHighLevelClient.delete(new DeleteRequest(index_name, skuInfo.getId()), RequestOptions.DEFAULT);
+                restHighLevelClient.delete(deleteRequest, RequestOptions.DEFAULT);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -162,7 +163,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         int page = 1, size = 100;
         //2.根据总记录数计算总页数
         int totalpages = total % size == 0 ? total / size : (total / size) + 1;
-
+//        System.out.println(page+","+totalpages);
         //3.循环总页数，查询每页的数据
         for (int i = 0; i < totalpages; i++) {
             List<Sku> skus = skuFeign.list(page, size);
@@ -181,13 +182,13 @@ public class SkuInfoServiceImpl implements SkuInfoService {
 
                 //将skuInfo对象转换为json字符串
                 String data = JSON.toJSONString(skuInfo);
+//                System.out.println(data);
                 IndexRequest indexRequest = new IndexRequest(index_name);
-                indexRequest.id(skuInfo.getId() + "").source(data, XContentType.JSON);
+                indexRequest.id(skuInfo.getId()).source(data, XContentType.JSON);
 
                 //添加批量保存
                 bulkRequest.add(indexRequest);
             }
-
 
             try {
                 //5.2 执行批量操作
@@ -240,7 +241,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
                     //将skuInfo对象转换为json字符串
                     String data = JSON.toJSONString(skuInfo);
                     IndexRequest indexRequest = new IndexRequest(index_name);
-                    indexRequest.id(skuInfo.getId() + "").source(data, XContentType.JSON);//设置索引库的唯一标识符为商品ID
+                    indexRequest.id(skuInfo.getId()).source(data, XContentType.JSON);//设置索引库的唯一标识符为商品ID
                     // indexRequest.source(data, XContentType.JSON);//不设置索引库的唯一标识符
 
                     //添加批量保存

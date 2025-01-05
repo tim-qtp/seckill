@@ -1,10 +1,7 @@
 package com.seckill.order.service;
 
 import com.github.pagehelper.PageInfo;
-import com.seckill.order.pojo.Order;
-
-import java.io.IOException;
-import java.util.Map;
+import com.seckill.page.Order;
 
 /**
  * @author http://www.itheima.com

@@ -23,6 +23,18 @@ public class SkuController {
 
 
     /**
+     * Sku更改秒杀结束时间
+     * @return
+     */
+    @GetMapping(value = "/update")
+    public Result update2(){
+        List<Sku> skus = skuService.findAll();
+        skuService.update2(skus);
+        return new Result(true, StatusCode.OK, "Sku秒杀结束时间更改成功");
+    }
+
+
+    /**
      * Sku分页条件加载
      */
     @GetMapping(value = "/list/{page}/{size}" )

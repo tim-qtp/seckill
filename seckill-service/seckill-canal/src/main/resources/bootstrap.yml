@@ -20,3 +20,7 @@ logging:
     console: "%msg%n"
   level:
     root: info
+#Canal配置
+canal:
+  server: canal-server:11111
+  destination: example

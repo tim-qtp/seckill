@@ -64,8 +64,8 @@ public class SearchController {
     public Result addAll() {
         //批量导入
         long start = System.currentTimeMillis();
-        // skuInfoService.addAll();
-        skuInfoService.addAll2();
+         skuInfoService.addAll();
+//        skuInfoService.addAll2();
         System.out.println("执行的时间是：" + (System.currentTimeMillis() - start));
         return new Result(true, StatusCode.OK, "批量导入成功！");
     }

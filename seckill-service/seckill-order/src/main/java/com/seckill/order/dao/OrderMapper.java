@@ -1,6 +1,6 @@
 package com.seckill.order.dao;
 
-import com.seckill.order.pojo.Order;
+import com.seckill.page.Order;
 import tk.mybatis.mapper.common.Mapper;
 
 /**

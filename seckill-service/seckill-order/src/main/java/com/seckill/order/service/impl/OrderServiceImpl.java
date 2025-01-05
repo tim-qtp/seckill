@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.seckill.goods.feign.SkuFeign;
 import com.seckill.goods.pojo.Sku;
 import com.seckill.order.dao.OrderMapper;
-import com.seckill.order.pojo.Order;
+import com.seckill.page.Order;
 import com.seckill.order.service.OrderService;
 import com.seckill.util.IdWorker;
 import com.seckill.util.Result;
