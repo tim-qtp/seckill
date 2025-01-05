@@ -67,29 +67,4 @@ public class SkuHandler implements EntryHandler<Sku> {
     @Override
     public void delete(Sku sku) {
     }
-
-//    /**
-//     * 增加数据
-//     */
-//    @Override
-//    public void insert(Sku sku) {
-//        System.out.println("===========insert:"+sku);
-//    }
-//
-//    /**
-//     * 修改数据
-//     */
-//    @Override
-//    public void update(Sku before, Sku after) {
-//        System.out.println("===========update-before:"+before);
-//        System.out.println("===========update-after:"+after);
-//    }
-//
-//    /**
-//     * 删除数据
-//     */
-//    @Override
-//    public void delete(Sku sku) {
-//        System.out.println("===========delete:"+sku);
-//    }
 }
